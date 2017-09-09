@@ -1,4 +1,4 @@
-augmentcpp <- function(corm,buff){
+augmentcpp <- function(corm,buff=0.00001){
 
     n <- ncol(corm)
     names <- colnames(as.data.frame(corm))
@@ -7,7 +7,7 @@ augmentcpp <- function(corm,buff){
     perm <- sample(1:n)
     corm <- (corm[perm,])[,perm]
 
-    B <- as.data.frame(t(chol(corm)))
+    B <- as.data.frame(cholcpp(corm))
 
     B[n+1,] <- B[,n+1] <- 0
     B[n+1,1] <- runif(1,-1,1)

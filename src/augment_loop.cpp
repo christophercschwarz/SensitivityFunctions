@@ -7,6 +7,7 @@ arma::mat matprod (arma::mat x);
 double runifcpp (double lower, double upper);
 arma::mat subset (arma::mat x, int row, int column_min, int column_max);
 arma::mat vecmult (arma::mat x, arma::mat y);
+arma::mat cholcpp (arma::mat x);
 
 // [[Rcpp::export()]]
 arma::mat augment_loop (arma::mat x, int n, double buff) {

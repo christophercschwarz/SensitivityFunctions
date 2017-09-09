@@ -2,22 +2,26 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 augment_loop <- function(x, n, buff) {
-    .Call('_SensitivityFunctions_augment_loop', PACKAGE = 'SensitivityFunctions', x, n, buff)
+    .Call('_SensitivityFunctions2_augment_loop', PACKAGE = 'SensitivityFunctions2', x, n, buff)
+}
+
+cholcpp <- function(x) {
+    .Call('_SensitivityFunctions2_cholcpp', PACKAGE = 'SensitivityFunctions2', x)
 }
 
 matprod <- function(x) {
-    .Call('_SensitivityFunctions_matprod', PACKAGE = 'SensitivityFunctions', x)
+    .Call('_SensitivityFunctions2_matprod', PACKAGE = 'SensitivityFunctions2', x)
 }
 
 runifcpp <- function(lower, upper) {
-    .Call('_SensitivityFunctions_runifcpp', PACKAGE = 'SensitivityFunctions', lower, upper)
+    .Call('_SensitivityFunctions2_runifcpp', PACKAGE = 'SensitivityFunctions2', lower, upper)
 }
 
 subset <- function(x, row, column_min, column_max) {
-    .Call('_SensitivityFunctions_subset', PACKAGE = 'SensitivityFunctions', x, row, column_min, column_max)
+    .Call('_SensitivityFunctions2_subset', PACKAGE = 'SensitivityFunctions2', x, row, column_min, column_max)
 }
 
 vecmult <- function(x, y) {
-    .Call('_SensitivityFunctions_vecmult', PACKAGE = 'SensitivityFunctions', x, y)
+    .Call('_SensitivityFunctions2_vecmult', PACKAGE = 'SensitivityFunctions2', x, y)
 }
 

@@ -1,4 +1,4 @@
-newdat <- function(y,X){
+newdatcpp <- function(y,X){
     dat <- as.data.frame(cbind(y,X))
     sc <- scale(dat)
     scale <- c(attr(sc,"scaled:scale"),1)
@@ -6,7 +6,7 @@ newdat <- function(y,X){
     sc <- as.data.frame(sc)
     sc[,"cf"] <- scale(rnorm(nrow(dat),0,1))
     corm <- cor(sc)
-    augm <- augmentcpp(cor(dat))
+    augm <- augmentcpp(cor(dat),buff=0.00001)
 
     orth <- t(solve(t(chol(corm))) %*% t(sc))
 
