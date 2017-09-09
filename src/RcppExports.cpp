@@ -8,7 +8,7 @@ using namespace Rcpp;
 
 // augment_loop
 arma::mat augment_loop(arma::mat x, int n, double buff);
-RcppExport SEXP _SensitivityFunctions2_augment_loop(SEXP xSEXP, SEXP nSEXP, SEXP buffSEXP) {
+RcppExport SEXP _SensitivityFunctions_augment_loop(SEXP xSEXP, SEXP nSEXP, SEXP buffSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -21,7 +21,7 @@ END_RCPP
 }
 // cholcpp
 arma::mat cholcpp(arma::mat x);
-RcppExport SEXP _SensitivityFunctions2_cholcpp(SEXP xSEXP) {
+RcppExport SEXP _SensitivityFunctions_cholcpp(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -32,7 +32,7 @@ END_RCPP
 }
 // matprod
 arma::mat matprod(arma::mat x);
-RcppExport SEXP _SensitivityFunctions2_matprod(SEXP xSEXP) {
+RcppExport SEXP _SensitivityFunctions_matprod(SEXP xSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -43,7 +43,7 @@ END_RCPP
 }
 // runifcpp
 double runifcpp(double lower, double upper);
-RcppExport SEXP _SensitivityFunctions2_runifcpp(SEXP lowerSEXP, SEXP upperSEXP) {
+RcppExport SEXP _SensitivityFunctions_runifcpp(SEXP lowerSEXP, SEXP upperSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -55,7 +55,7 @@ END_RCPP
 }
 // subset
 arma::mat subset(arma::mat x, int row, int column_min, int column_max);
-RcppExport SEXP _SensitivityFunctions2_subset(SEXP xSEXP, SEXP rowSEXP, SEXP column_minSEXP, SEXP column_maxSEXP) {
+RcppExport SEXP _SensitivityFunctions_subset(SEXP xSEXP, SEXP rowSEXP, SEXP column_minSEXP, SEXP column_maxSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -69,7 +69,7 @@ END_RCPP
 }
 // vecmult
 arma::mat vecmult(arma::mat x, arma::mat y);
-RcppExport SEXP _SensitivityFunctions2_vecmult(SEXP xSEXP, SEXP ySEXP) {
+RcppExport SEXP _SensitivityFunctions_vecmult(SEXP xSEXP, SEXP ySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -81,16 +81,16 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_SensitivityFunctions2_augment_loop", (DL_FUNC) &_SensitivityFunctions2_augment_loop, 3},
-    {"_SensitivityFunctions2_cholcpp", (DL_FUNC) &_SensitivityFunctions2_cholcpp, 1},
-    {"_SensitivityFunctions2_matprod", (DL_FUNC) &_SensitivityFunctions2_matprod, 1},
-    {"_SensitivityFunctions2_runifcpp", (DL_FUNC) &_SensitivityFunctions2_runifcpp, 2},
-    {"_SensitivityFunctions2_subset", (DL_FUNC) &_SensitivityFunctions2_subset, 4},
-    {"_SensitivityFunctions2_vecmult", (DL_FUNC) &_SensitivityFunctions2_vecmult, 2},
+    {"_SensitivityFunctions_augment_loop", (DL_FUNC) &_SensitivityFunctions_augment_loop, 3},
+    {"_SensitivityFunctions_cholcpp", (DL_FUNC) &_SensitivityFunctions_cholcpp, 1},
+    {"_SensitivityFunctions_matprod", (DL_FUNC) &_SensitivityFunctions_matprod, 1},
+    {"_SensitivityFunctions_runifcpp", (DL_FUNC) &_SensitivityFunctions_runifcpp, 2},
+    {"_SensitivityFunctions_subset", (DL_FUNC) &_SensitivityFunctions_subset, 4},
+    {"_SensitivityFunctions_vecmult", (DL_FUNC) &_SensitivityFunctions_vecmult, 2},
     {NULL, NULL, 0}
 };
 
-RcppExport void R_init_SensitivityFunctions2(DllInfo *dll) {
+RcppExport void R_init_SensitivityFunctions(DllInfo *dll) {
     R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
     R_useDynamicSymbols(dll, FALSE);
 }
